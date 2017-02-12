@@ -31,7 +31,8 @@ const paths = {
     'firebase/firebase.js',
     'angularfire/dist/angularfire.js',
     'jquery/dist/jquery.js',
-    'bootstrap/dist/js/bootstrap.js'
+    'bootstrap/dist/js/bootstrap.js',
+    'angular-animate/angular-animate.js'
   ],
   static: [
     `${root}/index.html`,
@@ -67,7 +68,7 @@ gulp.task('styles', () => {
   return gulp.src(paths.styles)
     .pipe(sass({
       outputStyle: 'compressed',
-      includePaths: [paths.nodescss + 'bootstrap-sass/assets/stylesheets', paths.nodescss + 'font-awesome/scss' ]
+      includePaths: [paths.nodescss + 'bootstrap-sass/assets/stylesheets', paths.nodescss + 'font-awesome/scss', 'src/sass' ]
     }))
     .pipe(gulp.dest(paths.dist + 'css/'));
 });

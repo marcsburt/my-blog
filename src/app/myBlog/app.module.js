@@ -2,7 +2,8 @@ angular
   .module('myBlog', [
     'ui.router',
     'firebase',
-    'ui.router'
+    'ui.router',
+    'ngAnimate'
   ])
   .config(function($firebaseRefProvider){
   	var config = {
