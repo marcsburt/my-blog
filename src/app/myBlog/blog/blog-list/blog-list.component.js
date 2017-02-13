@@ -20,7 +20,7 @@ angular
 				},
 				resolve:{
 					resolvePosts: function(BlogService){
-						return BlogService.getPosts();
+						return BlogService.getAllPosts();
 					}
 				}
 			});

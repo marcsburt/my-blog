@@ -1,14 +1,27 @@
 function BlogService($http) {
   var API = '//jsonplaceholder.typicode.com/posts/';
-  this.getPosts = function() {
+  this.getPosts = function(start, stop) {
     return $http
       .get(API)
       .then(function(response){
-        return response.data;
+        if (stop == 0){
+          return response.data;
+        } else {
+          return response.data.splice(start, stop);
+        }
       }, function (reason){
-        //error
+        console.log(reason);
       })
   }
+  
+  this.getAllPosts = function(){
+    return this.getPosts(0,0);
+  }
+    
+  this.getLandingPosts = function(){
+    return this.getPosts(0,4);
+  }
+
 }
 
 angular

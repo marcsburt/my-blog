@@ -35,6 +35,7 @@ const paths = {
     'angular-animate/angular-animate.js',
     'ng-fx/dist/ng-fx.js',
     'angular-utils-pagination/dirPagination.js'
+
   ],
   static: [
     `${root}/index.html`,
