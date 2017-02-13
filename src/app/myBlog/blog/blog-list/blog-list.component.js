@@ -20,7 +20,7 @@ angular
 				},
 				resolve:{
 					resolvePosts: function(BlogService){
-						return BlogService.getAllPosts();
+						return BlogService.getFireBlog();
 					}
 				}
 			});

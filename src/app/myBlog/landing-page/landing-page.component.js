@@ -19,7 +19,7 @@ angular
 				// },
 				resolve:{
 					landing: function(BlogService){
-						return BlogService.getLandingPosts();
+						return BlogService.getFireBlog();
 					}
 				}
 			});
