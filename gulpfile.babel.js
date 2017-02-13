@@ -23,7 +23,7 @@ const paths = {
   tests: `${root}/app/**/*.spec.js`,
   styles: `${root}/sass/*.scss`,
   nodescss: `./node_modules/`,
-  fontawesome: `./node_modules/font-awesome/fonts/**.*`,
+  fontawesome: `./node_modules/font-awesome/fonts/**/*`,
   templates: `${root}/app/**/*.html`,
   modules: [
     'angular/angular.js',
@@ -67,7 +67,7 @@ gulp.task('modules', ['templates'], () => {
     .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', ['clean'], () => {
   return gulp.src(paths.styles)
     .pipe(sass({
       outputStyle: 'compressed',
@@ -129,14 +129,17 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 gulp.task('default', [
   'clean',
   'copy',
-  'serve',
   'styles',
   'fonts',
+  'serve',
   'watch'
 ]);
 
 gulp.task('production', [
+  'clean',
   'copy',
+  'styles',
+  'fonts',
   'scripts',
   'firebase'
 ]);
