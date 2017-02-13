@@ -12,7 +12,6 @@
 				<a href = "" 
 					ng-click = "timelineFilter = {type: 'E'}"
 					>
-
 					<i class="fa fa-graduation-cap fa-2x"></i>
 				</a>
 				<br>
@@ -63,7 +62,7 @@
 <br>
 <div class = "row">
 <div 
-	class = "animate-repeat"
+	class = "fx-fade-normal fx-stagger-100"
 	ng-repeat = "data in $ctrl.timelineData | filter: timelineFilter"
 >
 	<div class = "col-lg-8 col-lg-offset-2">

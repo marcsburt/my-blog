@@ -1,6 +1,6 @@
 var blogList = {
 	bindings: {
-		blogList: '<'
+		allPosts: '<'
 	},
 	templateUrl: './blog-list.html',
 	controller: 'BlogListController'
@@ -16,7 +16,7 @@ angular
 				url: '/bloglist',
 				component: 'blogList',
 				bindings: {
-					blogList: 'resolvePosts'
+					allPosts: 'resolvePosts'
 				},
 				resolve:{
 					resolvePosts: function(BlogService){

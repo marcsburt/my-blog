@@ -3,7 +3,10 @@ angular
     'ui.router',
     'firebase',
     'ui.router',
-    'ngAnimate'
+    'ngAnimate',
+    'ng-fx',
+    'angularUtils.directives.dirPagination'
+
   ])
   .config(function($firebaseRefProvider){
   	var config = {
@@ -22,3 +25,7 @@ angular
 
   	firebase.initializeApp(config);
   })
+  .config(function ($urlRouterProvider){
+    $urlRouterProvider
+      .otherwise('landing')
+  });

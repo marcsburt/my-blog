@@ -1,4 +1,7 @@
 var aboutMe = {
+	bindings: {
+		allTimeline: '<'
+	},
 	templateUrl: './about-me.html',
 	controller: 'AboutMeController'
 }
@@ -11,6 +14,14 @@ angular
 			.state('aboutme', {
 				parent: 'common',
 				url: '/aboutme',
-				component: 'aboutMe'
+				component: 'aboutMe',
+				bindings: {
+					allTimeline: 'resolveTimeline'
+				},
+				resolve:{
+					resolveTimeline: function(TimelineService){
+						return TimelineService.getTimelineData();
+					}
+				}
 			});
 	});

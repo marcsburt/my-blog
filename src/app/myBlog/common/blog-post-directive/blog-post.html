@@ -1,0 +1,18 @@
+<div 
+	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10"
+	pagination-id = "postId">
+	<div class = "col-lg-8 col-lg-offset-2 post-preview">
+		<h1 class = "post-preview-header">{{post.title}}</h1>
+		<h4 class = "post-preview-description">{{post.title}} is a place holder for the description</h4>
+		<span class = "post-preview-date"><i>Tuesday, Feb 7th @ 5:16</i></span>
+		<p class = "post-preview-summary">
+			{{post.body}}
+		</p>
+		<hr>
+	</div>
+</div>
+<div class = "row text-center">
+<dir-pagination-controls pagination-id="postId"></dir-pagination-controls>
+</div>
+<br>
+<br>
