@@ -2,7 +2,7 @@
 	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10"
 	pagination-id = "postId">
 	<div class = "col-lg-8 col-md-12 col-lg-offset-2 post-preview">
-		<h1 class = "post-preview-header">{{post.title}}</h1>
+		<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.title}}</h1></a>
 		<span class = "post-preview-date"><i>{{post.date}}</i></span>
 		<br>
 		<br>

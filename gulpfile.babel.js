@@ -128,10 +128,10 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 
 gulp.task('default', [
   'clean',
+  'serve',
   'copy',
   'styles',
   'fonts',
-  'serve',
   'watch'
 ]);
 

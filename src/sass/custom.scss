@@ -356,12 +356,21 @@ a.socialIcon:hover, .socialHoverClass {
   border-radius: 5px;
 }
 
+
+a.timeline-button:hover{
+  color: #235580;
+  text-decoration: none;
+}
+a.timeline-button{
+  color: #3174ae;
+}
+
 a{
-  color: #666666;
+  color: #000000;
 }
 
 a:hover{
-  color: #999999;
+  color: #666666;
   text-decoration: none;
 }
 
@@ -369,3 +378,4 @@ a:hover{
   background: #FFFFFF;
   border: solid 1px #999999;
 }
+

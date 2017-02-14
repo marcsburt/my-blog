@@ -1,10 +1,11 @@
 <div class="container blog-container">
 
-<pre>{{$ctrl.singlePost | json}}</pre>
+
 	<div class = "col-lg-10 col-lg-offset-1 blog-post">
-		<h1 class = "blog-post-header text-center">{{$ctrl.singlePost.title}}</h1>
+	<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.title}}</h1>
 		<br>
 		<h4 class = "blog-post-description text-center">{{$ctrl.singlePost.description}}</h4>
+		<br>
 		<div class = "text-center">
 			<span class = "blog-post-date"><i>{{$ctrl.singlePost.date}}</i></span>
 		</div>
