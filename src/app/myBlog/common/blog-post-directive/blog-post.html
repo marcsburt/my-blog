@@ -3,11 +3,22 @@
 	pagination-id = "postId">
 	<div class = "col-lg-8 col-md-12 col-lg-offset-2 post-preview">
 		<h1 class = "post-preview-header">{{post.title}}</h1>
-		<h4 class = "post-preview-description">{{post.title}} is a place holder for the description</h4>
-		<span class = "post-preview-date"><i>Tuesday, Feb 7th @ 5:16</i></span>
+		<span class = "post-preview-date"><i>{{post.date}}</i></span>
+		<br>
+		<br>
+		<!-- <h4 class = "post-preview-description">{{post.description}}</h4> -->
 		<p class = "post-preview-summary">
-			{{post.body}}
+			{{post.body | limitTo: 500}}...
+		<br>
+		<br>
+
+		<a ui-sref = "singlepost({id: post.$id})">
+			<div class = "btn btn-default btn-xs">
+			Read More
+			</div>
+			</a>
 		</p>
+
 		<hr>
 	</div>
 </div>

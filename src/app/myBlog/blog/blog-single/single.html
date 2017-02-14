@@ -1,1 +1,24 @@
-{{$ctrl.single.title}}
+<div class="container blog-container">
+
+<pre>{{$ctrl.singlePost | json}}</pre>
+	<div class = "col-lg-10 col-lg-offset-1 blog-post">
+		<h1 class = "blog-post-header text-center">{{$ctrl.singlePost.title}}</h1>
+		<br>
+		<h4 class = "blog-post-description text-center">{{$ctrl.singlePost.description}}</h4>
+		<div class = "text-center">
+			<span class = "blog-post-date"><i>{{$ctrl.singlePost.date}}</i></span>
+		</div>
+		<hr>
+		<br>
+
+		<div class="col-lg-10 col-lg-offset-1">
+		<p class = "blog-content">
+			{{$ctrl.singlePost.body}}
+			<br>
+			<br>
+			<br>
+			<br>
+		</p>
+		</div>
+	</div>
+</div>

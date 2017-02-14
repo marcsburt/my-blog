@@ -67,7 +67,7 @@ gulp.task('modules', ['templates'], () => {
     .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
-gulp.task('styles', ['clean'], () => {
+gulp.task('styles', () => {
   return gulp.src(paths.styles)
     .pipe(sass({
       outputStyle: 'compressed',
