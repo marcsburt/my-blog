@@ -101,14 +101,14 @@ gulp.task('scripts', ['modules'], () => {
 gulp.task('serve', () => {
   return server.init({
     files: [`${paths.dist}/**`],
-    port: 4000,
+    port: 4040,
     server: {
       baseDir: paths.dist
     }
   });
 });
 
-gulp.task('copy', () => {
+gulp.task('copy', ['clean'], () => {
   return gulp.src(paths.static, { base: 'src' })
     .pipe(gulp.dest(paths.dist));
 });
@@ -127,19 +127,19 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 });
 
 gulp.task('default', [
-  'clean',
-  'serve',
+  // 'clean',
   'copy',
   'styles',
+  'serve',
   'fonts',
   'watch'
 ]);
 
 gulp.task('production', [
-  'clean',
+  // 'clean',
   'copy',
-  'styles',
-  'fonts',
+  // 'styles',
+  // 'fonts',
   'scripts',
   'firebase'
 ]);

@@ -379,3 +379,18 @@ a:hover{
   border: solid 1px #999999;
 }
 
+
+.white-bg{
+    background:#ffffff !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login{
+  margin-top: 100px;
+}
+
+.drop-shadow {
+    -webkit-box-shadow: 0 0 3px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 3px 2px rgba(0, 0, 0, .5);
+}

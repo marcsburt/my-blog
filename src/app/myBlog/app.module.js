@@ -29,3 +29,4 @@ angular
     $urlRouterProvider
       .otherwise('landing')
   });
+  
