@@ -8,6 +8,7 @@ angular
 	.config(function ($stateProvider){
 		$stateProvider
 			.state('backend', {
+				redirectTo: 'manage',
 				url: '/backend',
 				data: {
 					requiredAuth: true

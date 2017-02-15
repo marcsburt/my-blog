@@ -1,4 +1,4 @@
-function BlogService($http, $firebaseRef, $firebaseArray, $firebaseObject) {
+function BlogService($firebaseRef, $firebaseArray, $firebaseObject) {
 
   var ref = $firebaseRef.blog;
   this.getFireBlog = function (){
