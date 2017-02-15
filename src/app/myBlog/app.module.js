@@ -5,8 +5,8 @@ angular
     'ngAnimate',
     'ng-fx',
     'angularUtils.directives.dirPagination'
-
   ])
+
   .config(function($firebaseRefProvider) {
     const config = {
       apiKey: "AIzaSyDzRlZwtJl1iRpLJ6Su0CtmT9IptJJIv6I",
@@ -28,5 +28,19 @@ angular
   .config(function($urlRouterProvider) {
     $urlRouterProvider
       .otherwise('landing')
-  });
+  })
+  .run(function ($transitions, $state, AuthService){
+    $transitions.onStart({
+      to: function(state) {
+        console.log(state.data);
+        return !!(state.data && state.data.requiredAuth);
+      }
+    }, function(){
+      return AuthService
+        .requireAuthentication()
+        .catch(function (){
+          return $state.target('auth.login');
+        })
+    })
+  })
   

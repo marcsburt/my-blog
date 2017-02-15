@@ -1,7 +1,7 @@
 function LoginController (AuthService, $state){
 	var ctrl = this;
 	ctrl.error = null;
-	ctrl.userData = {
+	ctrl.user = {
 		email: '',
 		password: ''
 	};
@@ -9,17 +9,17 @@ function LoginController (AuthService, $state){
 	ctrl.loginUser = function (user) {
 		return AuthService
 			.login(user)
-			.then(function(){
-				console.log('I think that I am logged in')
-				// $state.go('common');
+			.then(function(user){
+				console.log('I think that I am logged in');
+				console.log(user)
+				// $state.go('common'); let's go to backend area
 			}, function(reason){
 				ctrl.error = reason.message;
 			});
 	};
 
 	ctrl.submitForm = function(){
-		ctrl.userData = ctrl.user
-		ctrl.loginUser(ctrl.userData);
+		ctrl.loginUser(ctrl.user);
 	}
 }
 
