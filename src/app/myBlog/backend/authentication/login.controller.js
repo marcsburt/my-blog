@@ -10,9 +10,7 @@ function LoginController (AuthService, $state){
 		return AuthService
 			.login(user)
 			.then(function(user){
-				console.log('I think that I am logged in');
-				console.log(user)
-				// $state.go('common'); let's go to backend area
+				$state.go('backend');
 			}, function(reason){
 				ctrl.error = reason.message;
 			});
