@@ -127,7 +127,7 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 });
 
 gulp.task('default', [
-  // 'clean',
+
   'copy',
   'styles',
   'serve',
@@ -136,10 +136,10 @@ gulp.task('default', [
 ]);
 
 gulp.task('production', [
-  // 'clean',
+
   'copy',
-  // 'styles',
-  // 'fonts',
+  'styles',
+  'fonts',
   'scripts',
   'firebase'
 ]);
