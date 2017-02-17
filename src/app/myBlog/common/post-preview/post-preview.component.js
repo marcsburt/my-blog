@@ -2,7 +2,7 @@ var blogPost = {
 	bindings: {
 		postData: '<'
 	},
-	templateUrl: './blog-post.html',
+	templateUrl: './post-preview.html',
 	controller: 'BlogPostController'
 }
 

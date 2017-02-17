@@ -1,8 +1,10 @@
 <div class="container blog-container">
-<pre>{{$ctrl.post | json}}</pre>
+<!-- <pre>{{$ctrl.post | json}}</pre> -->
 <div class = "row text-center">
 	<div class = "col-md-12">
-		<h1>post-detail</h1>
+		<div ng-if="$ctrl.isNewPost">
+			<h1>New Post</h1>
+		</div>
 	</div>
 </div>
 <div class = "row">
@@ -44,7 +46,7 @@
 					'debounce': {
 					'default': 250,
 					'blur': 0
-						}
+					}
 					}"
 					ng-model = "$ctrl.post.description">
 				</div>
@@ -53,19 +55,19 @@
 				<label for = "postAuthor" class="col-sm-2 control-label">Author:</label>
 				<div class = "col-sm-9">
 					<select
-					id = "postAuthor"
-					class = "form-control"
-					name="author"
-					required="required"
-					ng-change = "$ctrl.updatePost();"
-					ng-model-options = "{
-					'updateOn': 'default blur',
-					'debounce': {
-					'default': 250,
-					'blur': 0
+						id = "postAuthor"
+						class = "form-control"
+						name="author"
+						required="required"
+						ng-change = "$ctrl.updatePost();"
+						ng-model-options = "{
+						'updateOn': 'default blur',
+						'debounce': {
+						'default': 250,
+						'blur': 0
 						}
-					}"
-					ng-model = "$ctrl.post.author">
+						}"
+						ng-model = "$ctrl.post.author">
 						<option></option>
 						<option>Marc Burt</option>
 					</select>
@@ -88,21 +90,39 @@
 					'debounce': {
 					'default': 250,
 					'blur': 0
-						}
+					}
 					}"
 					ng-model = "$ctrl.post.body">
 				</div>
 			</div>
-			<br>
+			<label for = "postTags" class="col-sm-2 control-label">Tags:</label>
+			<div class = "col-sm-9">
+				<tags-input
+				id = "postTags"
+				name="tags"
+				class = "ti-input-lg"
+				ng-change = "$ctrl.updatePost();"
+				ng-model-options = "{
+				'updateOn':'default blur',
+				'debounce': {
+				'default': 250,
+				'blur': 0
+				}
+				}"
+				ng-model = "$ctrl.post.tags">
+				</tags-input>
+				<br>
+				<br>
+			</div>
 			<div class="text-center">
-			<div ng-if="$ctrl.isNewPost">
-			  <button
-			  		class = "btn btn-lg btn-primary"
+				<div ng-if="$ctrl.isNewPost">
+					<button
+					class = "btn btn-lg btn-primary"
 					ng-disabled="postDetailForm.$invalid"
 					ng-click="$ctrl.savePost();">
-			    Create Post
-			  </button>
-			</div>
+					Create Post
+					</button>
+				</div>
 			</div>
 		</form>
 		<br>

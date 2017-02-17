@@ -5,7 +5,8 @@ angular
     'ngAnimate',
     'ng-fx',
     'angularUtils.directives.dirPagination',
-    'ngTable'
+    'ngTable',
+    'ngTagsInput'
   ])
 
   .config(function($firebaseRefProvider) {

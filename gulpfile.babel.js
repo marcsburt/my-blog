@@ -37,7 +37,8 @@ const paths = {
     'ng-fx/dist/ng-fx.js',
     'angular-utils-pagination/dirPagination.js',
     'ng-table/bundles/ng-table.js',
-    'underscore/underscore.js'
+    'underscore/underscore.js',
+    'ng-tags-input/build/ng-tags-input.js'
 
   ],
   static: [

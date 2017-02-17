@@ -3,14 +3,17 @@ function PostNewController(AddRemoveService, $state){
 	var ctrl = this;
 	ctrl.$onInit = function() {
 		ctrl.post = {
+			date: '',
 			body: '',
 			author: '',
 			description: '',
 			title: '',
-			tags: ['']
+			tags: ''
 		}
 	}
 	ctrl.createNewPost = function(event){
+		var date = new Date().toJSON();
+		event.post.date = date;
 		return AddRemoveService
 			.createNewPost(event.post)
 			.then(function (post){
