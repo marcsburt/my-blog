@@ -17,7 +17,7 @@ angular
 				component: 'postSummary',
 				resolve:{
 					posts: function(BlogService){
-						return BlogService.getFireBlog();
+						return BlogService.getFireBlog().$loaded();
 					}
 				}
 			});

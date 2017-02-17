@@ -17,7 +17,7 @@ function PostNewController(AddRemoveService, $state){
 		return AddRemoveService
 			.createNewPost(event.post)
 			.then(function (post){
-				$state.go('new', {
+				$state.go('summary', {
 					id: post.key
 				})
 			})

@@ -3,6 +3,7 @@ function PostDetailController(){
 	ctrl.$onInit = function () {
 	  ctrl.isNewPost = !ctrl.post.$id;
 	};
+	
 	ctrl.savePost = function () {
 		console.log('adding post')
 	  ctrl.onSave({
@@ -10,7 +11,25 @@ function PostDetailController(){
 	      post: ctrl.post
 	    }
 	  });
-	};
+	 };
+
+	  ctrl.deletePost = function(){
+	  	console.log('deleting post')
+	  	ctrl.onDelete({
+	  		$event: {
+	  			post: ctrl.post
+	  		}
+	  	});
+	  };
+
+	  ctrl.updatePost = function(){
+	  	ctrl.onUpdate({
+	  		$event: {
+	  			post: ctrl.post
+	  		}
+	  	});
+	  };
+
 }
 
 angular

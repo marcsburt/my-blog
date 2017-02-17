@@ -1,7 +1,9 @@
 var postDetail = {
 	bindings: {
 		post: '<',
-		onSave: '&'
+		onSave: '&',
+		onDelete: '&',
+		onUpdate: '&'
 	},
 	templateUrl: './post-detail.html',
 	controller: 'PostDetailController'

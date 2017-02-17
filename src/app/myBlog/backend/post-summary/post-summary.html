@@ -12,14 +12,14 @@
 		ng-table="$ctrl.tableParams"
 		class = "table table-bordered table-striped"
 		show-filter = "true">
-		<tr ng-repeat = "post in $data">
+		<tr ng-repeat = "post in $data | orderBy: 'id'">
 			<td title = "'Id'">{{post.$id}}</td>
 			<td title = "'Date'"  sortable = " 'date' ">{{post.date | date : 'medium'}}</td>
 			<!-- filter = "{ date: 'select'}" -->
 			<td title = "'Title'" filter = "{ title: 'text' }" sortable = " 'title' ">{{post.title}}</td>
 			<td title = "'Description'" filter = "{ description: 'text' }" sortable = " 'description' ">{{post.description}}</td>
 			<td title = "'Tags'"><ul class = "list-unstyled"><li ng-repeat = "tag in post.tags">{{tag.text}}</li></ul></td>
-			<td title = "'Alter'"></td>
+			<td title = "'Alter'"><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
 		</tr>
 	</table>
 	<br>

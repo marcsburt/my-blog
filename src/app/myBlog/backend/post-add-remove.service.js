@@ -7,9 +7,10 @@ function AddRemoveService (AuthService, $firebaseRef, $firebaseArray, $firebaseO
 	this.updatePost = function (post) {
 		return post.$save();
 	}
-	this.deleteContact = function(post){
-		return post.$remove
+	this.deletePost = function(post){
+		return post.$remove();
 	}
+
 }
 
 angular

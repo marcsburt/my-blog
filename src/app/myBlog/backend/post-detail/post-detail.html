@@ -19,7 +19,7 @@
 					type="text"
 					name="title"
 					required="required"
-					ng-change = "$ctrl.updatePost();"
+
 					ng-model-options = "{
 					'updateOn':'default blur',
 					'debounce': {
@@ -40,7 +40,7 @@
 					rows = "2"
 					required="required"
 					name="description"
-					ng-change = "$ctrl.updatePost();"
+
 					ng-model-options = "{
 					'updateOn':'default blur',
 					'debounce': {
@@ -59,7 +59,7 @@
 						class = "form-control"
 						name="author"
 						required="required"
-						ng-change = "$ctrl.updatePost();"
+
 						ng-model-options = "{
 						'updateOn': 'default blur',
 						'debounce': {
@@ -84,7 +84,7 @@
 					type="html"
 					rows = "30"
 					name="body"
-					ng-change = "$ctrl.updatePost();"
+
 					ng-model-options = "{
 					'updateOn':'default blur',
 					'debounce': {
@@ -101,7 +101,7 @@
 				id = "postTags"
 				name="tags"
 				class = "ti-input-lg"
-				ng-change = "$ctrl.updatePost();"
+
 				ng-model-options = "{
 				'updateOn':'default blur',
 				'debounce': {
@@ -115,6 +115,21 @@
 				<br>
 			</div>
 			<div class="text-center">
+			<div ng-if="!$ctrl.isNewPost">
+			  <button
+			    class="btn btn-lg btn-danger"
+			    ng-click="$ctrl.deletePost();">
+			    Delete post
+			  </button>
+			</div>
+			<div ng-if="!$ctrl.isNewPost">
+			  <button
+			    class="btn btn-lg btn-primary"
+			    ng-click="$ctrl.updatePost();">
+			    Update Post
+			  </button>
+			</div>
+
 				<div ng-if="$ctrl.isNewPost">
 					<button
 					class = "btn btn-lg btn-primary"

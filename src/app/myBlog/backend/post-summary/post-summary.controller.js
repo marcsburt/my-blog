@@ -1,13 +1,26 @@
-function PostSummaryController(BlogService, NgTableParams) {
+function PostSummaryController(AddRemoveService, BlogService, NgTableParams, $state, $window){
 	var ctrl = this;
 	ctrl.$onInit = function() {
 		ctrl.tableParams = new NgTableParams({}, {
 			dataset: ctrl.posts
 		})
-		var dateFormat = _.pluck(ctrl.posts, 'date')
-		ctrl.date = dateFormat
-		ctrl.getDate = function(){
-			return dateFormat
+	}
+	ctrl.selectPostEdit = function(postId){
+		console.log(postId);
+		$state.go('edit', {
+			id: postId
+		})
+	}
+	ctrl.deletePost = function(post){
+		console.log(post)
+		var message = 'Do you really want to delete ' + post +'from posts?';
+		var pickedPost = BlogService.getPostById(post);
+		if($window.confirm(message)){
+			return AddRemoveService
+				.deletePost(pickedPost)
+				.then(function(){
+					$state.go($state.current, {}, {reload: true});
+				})
 		}
 	}
 }
