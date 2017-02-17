@@ -2,7 +2,7 @@ function AddRemoveService (AuthService, $firebaseRef, $firebaseArray, $firebaseO
 	var ref = $firebaseRef.blog;
 	var uid = AuthService.getUser().uid;
 	this.createNewPost = function (post) {
-		return $firebaseArray(ref(child(uid)).$add(post));
+		return $firebaseArray(ref.child(uid)).$add(post);
 	}
 	this.updatePost = function (post) {
 		return post.$save();

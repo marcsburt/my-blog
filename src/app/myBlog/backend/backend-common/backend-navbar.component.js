@@ -1,4 +1,7 @@
 var backendNav = {
+	bindings: {
+		user: '<'
+	},
 	templateUrl: './backend-navbar.html',
 	controller: 'BackendNavController'
 }

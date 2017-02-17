@@ -4,7 +4,8 @@ angular
     'firebase',
     'ngAnimate',
     'ng-fx',
-    'angularUtils.directives.dirPagination'
+    'angularUtils.directives.dirPagination',
+    'ngTable'
   ])
 
   .config(function($firebaseRefProvider) {
@@ -20,6 +21,7 @@ angular
       .registerUrl({
         default: config.databaseURL,
         blog: config.databaseURL + '/blog',
+        allposts: config.databaseURL + '/blog/A30T1oiY9DQtUmoA73HTFTS3MbD2',
         timeline: config.databaseURL + '/timeline'
       })
 

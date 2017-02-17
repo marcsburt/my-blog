@@ -1,0 +1,24 @@
+<div class = "container blog-container">
+<pre>{{$ctrl.posts.id | json}}</pre>
+	<div class="text-center">
+		<h1>Summary of Live Posts</h1>
+		<br>
+		<br>
+
+	</div>
+	<table
+		ng-table="$ctrl.tableParams"
+		class = "table table-bordered table-striped"
+		show-filter = "true">
+		<tr ng-repeat = "post in $data">
+			<td title = "'Id'">{{post.$id}}</td>
+			<td title = "'Date'"  sortable = " 'date' ">{{post.date}}</td>
+			<!-- filter = "{ date: 'select'}" -->
+			<td title = "'Title'" filter = "{ title: 'text' }" sortable = " 'title' ">{{post.title}}</td>
+			<td title = "'Description'" filter = "{ description: 'text' }" sortable = " 'description' ">{{post.description}}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>

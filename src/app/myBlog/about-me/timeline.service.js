@@ -13,7 +13,7 @@ function TimelineService(){
 		name: "Went to camp",
 		type: "B",
 		date: "Jan 12",
-		message: "It sucked balls"
+		message: "It was fun"
 	},{
 		name: "Graduated From BU",
 		type: "E",
@@ -28,7 +28,7 @@ function TimelineService(){
 		name: "Went to camp",
 		type: "B",
 		date: "Jan 12",
-		message: "It sucked balls"
+		message: "It was fun"
 	},{
 		name: "Graduated From BU",
 		type: "E",
@@ -43,7 +43,7 @@ function TimelineService(){
 		name: "Went to camp",
 		type: "B",
 		date: "Jan 12",
-		message: "It sucked balls"
+		message: "It was fun"
 	}];
 
 	this.getTimelineData = function(){

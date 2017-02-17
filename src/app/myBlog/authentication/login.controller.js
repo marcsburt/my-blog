@@ -1,22 +1,24 @@
-function LoginController (AuthService, $state){
+function LoginController(AuthService, $state) {
 	var ctrl = this;
-	ctrl.error = null;
-	ctrl.user = {
-		email: '',
-		password: ''
+	ctrl.$onInit = function() {
+		ctrl.error = null;
+		ctrl.user = {
+			email: '',
+			password: ''
+		};
 	};
 
-	ctrl.loginUser = function (user) {
+	ctrl.loginUser = function(user) {
 		return AuthService
 			.login(user)
-			.then(function(user){
+			.then(function(user) {
 				$state.go('backend');
-			}, function(reason){
+			}, function(reason) {
 				ctrl.error = reason.message;
 			});
 	};
 
-	ctrl.submitForm = function(){
+	ctrl.submitForm = function() {
 		ctrl.loginUser(ctrl.user);
 	}
 }

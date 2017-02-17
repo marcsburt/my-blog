@@ -14,6 +14,7 @@ import path from 'path';
 import child from 'child_process';
 import sourcemaps from 'gulp-sourcemaps';
 
+
 const exec = child.exec;
 const argv = yargs.argv;
 const root = 'src/';
@@ -34,7 +35,9 @@ const paths = {
     'bootstrap/dist/js/bootstrap.js',
     'angular-animate/angular-animate.js',
     'ng-fx/dist/ng-fx.js',
-    'angular-utils-pagination/dirPagination.js'
+    'angular-utils-pagination/dirPagination.js',
+    'ng-table/bundles/ng-table.js',
+    'underscore/underscore.js'
 
   ],
   static: [

@@ -1,0 +1,112 @@
+<div class="container blog-container">
+<pre>{{$ctrl.post | json}}</pre>
+<div class = "row text-center">
+	<div class = "col-md-12">
+		<h1>post-detail</h1>
+	</div>
+</div>
+<div class = "row">
+	<div class = "col-md-12">
+		<form class = "form-horizontal" name = "postDetailForm" novalidate>
+			<div class = "form-group">
+				<label for = "postTitle" class="col-sm-2 control-label">Title:</label>
+				<div class = "col-sm-9">
+					<input
+					id = "postTitle"
+					class = "form-control"
+					type="text"
+					name="title"
+					required="required"
+					ng-change = "$ctrl.updatePost();"
+					ng-model-options = "{
+					'updateOn':'default blur',
+					'debounce': {
+					'default': 250,
+					'blur': 0
+					}
+					}"
+					ng-model = "$ctrl.post.title">
+				</div>
+			</div>
+			<div class = "form-group">
+				<label for = "postDescription" class="col-sm-2 control-label">Description:</label>
+				<div class = "col-sm-9">
+					<textarea
+					id = "postDescription"
+					class = "form-control"
+					type="text"
+					rows = "2"
+					required="required"
+					name="description"
+					ng-change = "$ctrl.updatePost();"
+					ng-model-options = "{
+					'updateOn':'default blur',
+					'debounce': {
+					'default': 250,
+					'blur': 0
+						}
+					}"
+					ng-model = "$ctrl.post.description">
+				</div>
+			</div>
+			<div class = "form-group">
+				<label for = "postAuthor" class="col-sm-2 control-label">Author:</label>
+				<div class = "col-sm-9">
+					<select
+					id = "postAuthor"
+					class = "form-control"
+					name="author"
+					required="required"
+					ng-change = "$ctrl.updatePost();"
+					ng-model-options = "{
+					'updateOn': 'default blur',
+					'debounce': {
+					'default': 250,
+					'blur': 0
+						}
+					}"
+					ng-model = "$ctrl.post.author">
+						<option></option>
+						<option>Marc Burt</option>
+					</select>
+				</div>
+			</div>
+			<div class = "form-group">
+				<label for = "postBody" class="col-sm-2 control-label">Body:</label>
+				<div class = "col-sm-9">
+					<textarea
+					onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
+					id = "postBody"
+					required="required"
+					class = "form-control"
+					type="html"
+					rows = "30"
+					name="body"
+					ng-change = "$ctrl.updatePost();"
+					ng-model-options = "{
+					'updateOn':'default blur',
+					'debounce': {
+					'default': 250,
+					'blur': 0
+						}
+					}"
+					ng-model = "$ctrl.post.body">
+				</div>
+			</div>
+			<br>
+			<div class="text-center">
+			<div ng-if="$ctrl.isNewPost">
+			  <button
+			  		class = "btn btn-lg btn-primary"
+					ng-disabled="postDetailForm.$invalid"
+					ng-click="$ctrl.savePost();">
+			    Create Post
+			  </button>
+			</div>
+			</div>
+		</form>
+		<br>
+		<br>
+	</div>
+</div>
+</div>

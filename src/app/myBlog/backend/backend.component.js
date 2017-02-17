@@ -1,5 +1,7 @@
 var backend = {
-	templateUrl: './backend.html'
+
+	templateUrl: './backend.html',
+	controller: 'BackendController'
 }
 
 angular
@@ -8,7 +10,7 @@ angular
 	.config(function ($stateProvider){
 		$stateProvider
 			.state('backend', {
-				redirectTo: 'manage',
+				redirectTo: 'summary',
 				url: '/backend',
 				data: {
 					requiredAuth: true
