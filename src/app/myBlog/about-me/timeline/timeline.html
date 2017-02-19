@@ -63,7 +63,7 @@
 <div class = "row">
 <div 
 	class = "fx-fade-normal fx-stagger-100"
-	ng-repeat = "data in $ctrl.timelineData | filter: timelineFilter"
+	ng-repeat = "data in $ctrl.timelineData | filter: timelineFilter | orderBy: '-dateTo'"
 >
 	<div class = "col-lg-8 col-lg-offset-2">
 	<div class="panel panel-primary">
@@ -76,14 +76,23 @@
 					'fa-user': data.type == 'P'
 					}"
 				aria-hidden = "true"></i>
-			&emsp; {{data.name}}
+			&emsp; <b>{{data.name}}</b><div ng-if="data.type == 'E' || data.type == 'B'">  &emsp;&emsp; {{data.place}}</div>
 			</h5>
 		</div>
-		<div class="panel-body">
-			<p>{{data.message}}</p>
+		<div 
+			class="panel-body"
+			ng-if = "data.message">
+			<blockquote>{{data.message}}</blockquote>
 		</div>
-		<div class = "panel-footer">
-			<i>{{data.date | date}}</i>
+		<div 
+			class = "panel-footer"
+			ng-if = "data.dateFrom"		>
+			<i>From: {{data.dateFrom | date: 'MMMM, y'}} - To: {{data.dateTo | date: 'MMMM, y'}}</i>
+		</div>
+		<div 
+			class = "panel-footer"
+			ng-if = "!data.dateFrom"		>
+			<i>{{data.dateTo | date: 'MMMM, y'}}</i>
 		</div>
 	</div>
 </div>

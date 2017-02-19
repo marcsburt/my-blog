@@ -4,7 +4,7 @@ function BackendNavController(AuthService, $state){
 	ctrl.loggedUser = AuthService.getUser();
 	ctrl.onLogout = function(){
 		AuthService.logout().then(function(){
-			$state.go('auth.login');
+			$state.go('landing');
 		})
 	}
 
