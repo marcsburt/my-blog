@@ -43,7 +43,14 @@ body, html{
 
 *{
   font-size: 16px;
-  line-height: 1.5;
+
+}
+
+p {
+
+  font-size: 1.2em;
+  line-height: 1.6;
+
 }
 
 hr{ 
@@ -71,7 +78,7 @@ border-top:1px #CCCCCC solid;
 }
 
 .landing-right-side{
-  font-weight: bold;
+
   background-color: #FFFFFF;
 }
 
@@ -928,4 +935,3 @@ tags-input.ti-input-sm .tags .input, .input-group-sm tags-input .tags .input {
 }
 
 /*# sourceMappingURL=ng-tags-input.bootstrap.css.map */
-

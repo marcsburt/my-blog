@@ -3,6 +3,9 @@ function PostEditController(AddRemoveService, $state, $window){
 	ctrl.updatePost = function(event){
 		return AddRemoveService
 			.updatePost(event.post)
+			.then(function(){
+				$state.go('summary')
+			})
 	}	
 
 	ctrl.deletePost = function(event){

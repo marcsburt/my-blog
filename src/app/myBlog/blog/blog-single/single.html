@@ -1,25 +1,23 @@
 <div class="container blog-container">
-
-
 	<div class = "col-lg-10 col-lg-offset-1 blog-post">
-	<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.title}}</h1>
-		<br>
-		<h4 class = "blog-post-description text-center">{{$ctrl.singlePost.description}}</h4>
-		<br>
+		<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.title}}</h1>
+
+		<h4 class = "blog-post-description text-center">Written by: {{$ctrl.singlePost.author}}</h4>
+
 		<div class = "text-center">
-			<span class = "blog-post-date"><i>{{$ctrl.singlePost.date}}</i></span>
+			<span class = "blog-post-date"><i>{{$ctrl.singlePost.date | date: 'MMM dd, yyyy'}}</i></span>
 		</div>
 		<hr>
 		<br>
-
 		<div class="col-lg-10 col-lg-offset-1">
-		<p class = "blog-content">
-			{{$ctrl.singlePost.body}}
+			<p
+				ng-bind-html = "$ctrl.singlePost.body"
+				>
+			</p>
 			<br>
 			<br>
 			<br>
 			<br>
-		</p>
 		</div>
 	</div>
 </div>

@@ -65,13 +65,15 @@ function TimelineService(){
 	},  {
 		name: "Providence Marathon Finisher",
 		type: "P",
+		message: "I finished in around 4 hours.  The last 20 minutes were the longest!",
 		dateTo: Date.parse("August, 2012")
 	}, {
 		name: "CFA Level 1",
 		type: "P",
+		message: "I passed the first one and didn't have a chance to take the other two.  It's still on the bucket list though",
 		dateTo: Date.parse("Dec, 2013")
 	}
-	]
+	];
 
 	this.getTimelineData = function(){
 		return self.timelineData;

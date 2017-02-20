@@ -76,23 +76,17 @@
 			<div class = "form-group">
 				<label for = "postBody" class="col-sm-2 control-label">Body:</label>
 				<div class = "col-sm-9">
-					<textarea
+					<textarea 
+					froala
 					onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"
 					id = "postBody"
 					required="required"
 					class = "form-control"
-					type="html"
+
 					rows = "30"
 					name="body"
-
-					ng-model-options = "{
-					'updateOn':'default blur',
-					'debounce': {
-					'default': 250,
-					'blur': 0
-					}
-					}"
 					ng-model = "$ctrl.post.body">
+					</textarea>
 				</div>
 			</div>
 			<label for = "postTags" class="col-sm-2 control-label">Tags:</label>

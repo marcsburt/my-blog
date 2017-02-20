@@ -6,10 +6,13 @@ angular
     'ng-fx',
     'angularUtils.directives.dirPagination',
     'ngTable',
-    'ngTagsInput'
+    'ngTagsInput',
+    'ngSanitize'
+
+
   ])
 
-  .config(function($firebaseRefProvider) {
+.config(function($firebaseRefProvider) {
     const config = {
       apiKey: "AIzaSyDzRlZwtJl1iRpLJ6Su0CtmT9IptJJIv6I",
       authDomain: "personal-blog-e29be.firebaseapp.com",
@@ -32,24 +35,23 @@ angular
     $urlRouterProvider
       .otherwise('landing')
   })
-  .run(function ($transitions, $state, AuthService){
+  .run(function($transitions, $state, AuthService) {
     $transitions.onStart({
       to: function(state) {
         return !!(state.data && state.data.requiredAuth);
       }
-    }, function(){
+    }, function() {
       return AuthService
         .requireAuthentication()
-        .catch(function (){
+        .catch(function() {
           return $state.target('auth.login');
-      });
+        });
     });
     $transitions.onStart({
       to: 'auth.*'
-    }, function(){
-      if(AuthService.isAuthenticated()) {
+    }, function() {
+      if (AuthService.isAuthenticated()) {
         return $state.target('backend')
       }
     })
   })
-  
