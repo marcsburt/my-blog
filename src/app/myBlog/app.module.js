@@ -3,6 +3,7 @@ angular
     'ui.router',
     'firebase',
     'ngAnimate',
+    // 'angularTrix',
     'ng-fx',
     'angularUtils.directives.dirPagination',
     'ngTable',

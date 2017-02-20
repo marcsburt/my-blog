@@ -39,7 +39,9 @@ const paths = {
     'ng-table/bundles/ng-table.js',
     'underscore/underscore.js',
     'ng-tags-input/build/ng-tags-input.js',
-    'angular-sanitize/angular-sanitize.js'
+    'angular-sanitize/angular-sanitize.js',
+    'trix/dist/trix.js',
+    'trix/dist/trix-core.js'
 
 
 
@@ -136,6 +138,7 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 gulp.task('default', [
 
   'copy',
+  'scripts',
   'styles',
   'serve',
   'fonts',
