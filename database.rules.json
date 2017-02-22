@@ -1,6 +1,10 @@
 {
   "rules": {
     ".read": true,
+    "contact": {
+    	".read": true,
+    	".write": true
+    },
 		"blog" : {
       "$uid": {
         ".read": "$uid === auth.uid",
