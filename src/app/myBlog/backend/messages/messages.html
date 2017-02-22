@@ -1,0 +1,28 @@
+<div class = "container-fluid blog-container">
+<div class="col-md-10 col-md-offset-1">
+	<div class="text-center">
+		<h1>Messages</h1>
+		<br>
+		<br>
+
+	</div>
+	<table
+		ng-table="$ctrl.messageParams"
+		class = "table table-bordered table-striped"
+		show-filter = "true">
+		<tr ng-repeat = "note in $data | orderBy: 'id'">
+			<td title = ""><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
+			<td title = "'Date'"  sortable = " 'date' ">{{note.date | date : 'medium'}}</td>
+			<td title = "'Name'"  sortable = " 'name' ">{{note.name}}</td>
+			<td title = "'Email'" sortable = " 'email' "><a href="mailto: {{note.email}}" target= "_top" > {{note.email}}</a></td>
+			<td title = "'Phone'" sortable = " 'phone' ">{{note.phone}}</td>
+			<td title = "'Subject'"  sortable = " 'subject' ">{{note.subject}}</td>
+			<td title = "'Note'"  sortable = " 'Note' ">{{note.message}}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+</div>

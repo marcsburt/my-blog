@@ -21,13 +21,6 @@ function TimelineService(){
 		dateTo: Date.parse("Aug, 2014"),
 		message: "Served as primary point of contact between DOD and VBA agencies for all progress of care issues related to severely injured military personnel.  Project management with focus on formulating relationships with non-profit entities to increase breadth of care."
 	},{
-		name: "Case Manager AW2 (contract)",
-		type: "B",
-		place: "United State Department of Defense",
-		dateFrom: Date.parse("June, 2011"),
-		dateTo: Date.parse("Aug, 2014"),
-		message: "Served as primary point of contact between DOD and VBA agencies for all progress of care issues related to severely injured military personnel.  Project management with focus on formulating relationships with non-profit entities to increase breadth of care."
-	},{
 		name: "Co-Founder/Web Developer",
 		type: "B",
 		place: "RoPurt LLC",

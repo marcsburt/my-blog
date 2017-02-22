@@ -48,7 +48,6 @@ body, html{
 }
 
 p {
-
   font-size: 1.3em;
   line-height: 1.7;
 
@@ -203,13 +202,16 @@ a{
 }
 
 a:hover{
-  color: #666666;
+  color: #999999;
   text-decoration: none;
 }
 
 .btn-default{
   background: #FFFFFF;
   border: solid 1px #999999;
+}
+.btn:hover{
+  background: #999999;
 }
 
 

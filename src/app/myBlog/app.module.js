@@ -27,7 +27,8 @@ angular
         default: config.databaseURL,
         blog: config.databaseURL + '/blog',
         allposts: config.databaseURL + '/blog/A30T1oiY9DQtUmoA73HTFTS3MbD2',
-        timeline: config.databaseURL + '/timeline'
+        timeline: config.databaseURL + '/timeline',
+        contact: config.databaseURL + '/contact'
       })
 
     firebase.initializeApp(config);
