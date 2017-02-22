@@ -8,7 +8,9 @@ function PostNewController(AddRemoveService, $state){
 			author: '',
 			description: '',
 			title: '',
-			tags: ''
+			tags: '',
+			shared: '',
+			upvoted: ''
 		}
 	}
 	ctrl.createNewPost = function(event){

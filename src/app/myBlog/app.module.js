@@ -3,12 +3,12 @@ angular
     'ui.router',
     'firebase',
     'ngAnimate',
-    // 'angularTrix',
     'ng-fx',
     'angularUtils.directives.dirPagination',
     'ngTable',
     'ngTagsInput',
-    'ngSanitize'
+    'ngSanitize',
+    '720kb.socialshare'
 
 
   ])
