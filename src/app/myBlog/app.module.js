@@ -8,9 +8,8 @@ angular
     'ngTable',
     'ngTagsInput',
     'ngSanitize',
-    '720kb.socialshare'
-
-
+    '720kb.socialshare',
+    'smart-table'
   ])
 
 .config(function($firebaseRefProvider) {

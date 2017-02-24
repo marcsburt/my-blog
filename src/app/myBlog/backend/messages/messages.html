@@ -1,24 +1,55 @@
 <div class = "container-fluid blog-container">
-<div class="col-md-10 col-md-offset-1">
-	<div class="text-center">
-		<h1>Messages</h1>
-		<br>
-		<br>
-
-	</div>
-	<table
-		ng-table="$ctrl.messageParams"
-		class = "table table-bordered table-striped"
-		show-filter = "true">
-		<tr ng-repeat = "message in $data | orderBy: 'id'">
-			<td title = ""><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
-			<td title = "'Date'"  sortable = " 'date' ">{{message.date | date : 'medium'}}</td>
-			<td title = "'Name'"  filter = "{ name: 'text' }" sortable = " 'name' ">{{message.name}}</td>
-			<td title = "'Email'" filter = "{ email: 'text' }" sortable = " 'email' "><a href="mailto: {{message.email}}" target= "_top" > {{message.email}}</a></td>
-			<td title = "'Phone'" filter = "{ phone: 'text' }" sortable = " 'phone' ">{{message.phone}}</td>
-			<td title = "'Subject'"   filter = "{ subject: 'text' }" sortable = " 'subject' ">{{message.subject}}</td>
-			<td title = "'Message'"  filter = "{ message: 'text' }" sortable = " 'message' ">{{message.message}}</td>
-		</tr>
+	<!-- <pre>{{$ctrl.messages | json}}</pre> -->
+	<div class="col-md-10 col-md-offset-1">
+		<div class="text-center">
+			<h1>Messages</h1>
+			<br>
+			<br>
+		</div>
+		<table st-table="$ctrl.messages" class="table table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th st-sort = "date" st-sort-default="true">Date</th>
+					<th st-sort = "name">Name</th>
+					<th st-sort = "email">Email</th>
+					<th>Phone</th>
+					<th>Subject</th>
+				</tr>
+				<tr>
+					<th colspan="2">
+						<input st-search class="form-control" placeholder="global search ..." type="search"/>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat-start="message in $ctrl.messages">
+					<td>
+						<button ng-if="message.expanded" ng-click="message.expanded = false">-</button>
+						<button ng-if="!message.expanded" ng-click="message.expanded = true">+</button>
+					</td>
+					<td>{{message.date | date: 'medium'}}</td>
+					<td>{{message.name}}</td>
+					<td><a href="mailto: {{message.email}}" target= "_top" > {{message.email}}</a></td>
+					<td>{{message.phone}}</td>
+					<td>{{message.subject}}</td>
+				</tr>
+				<tr ng-if="message.expanded" ng-repeat-end="">
+					<td colspan="12"><div class = "col-md-10 col-md-offset-1">
+						<br>
+						<blockquote>{{message.message}}</blockquote>
+						<br>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="12" class="text-center">
+					<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
 	<br>
 	<br>

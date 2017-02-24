@@ -40,7 +40,8 @@ const paths = {
     'underscore/underscore.js',
     'ng-tags-input/build/ng-tags-input.js',
     'angular-sanitize/angular-sanitize.js',
-    'angular-socialshare/dist/angular-socialshare.js'
+    'angular-socialshare/dist/angular-socialshare.js',
+    'angular-smart-table/dist/smart-table.js'
   ],
   static: [
     `${root}/index.html`,

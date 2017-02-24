@@ -1,11 +1,8 @@
 function MessagesSummaryController(ContactMeService, NgTableParams, $state){
 	var ctrl = this;
 	ctrl.$onInit = function() {
-		ctrl.messageParams = new NgTableParams({}, {
-			dataset: ctrl.messages
-		})
 	}
-
+	ctrl.itemsByPage = 20
 }
 
 angular

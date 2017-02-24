@@ -47,7 +47,7 @@ function TimelineService(){
 		place: "University of Rhode Island",
 		dateFrom: Date.parse("Jan, 2012"),
 		dateTo: Date.parse("Dec, 2013"),
-		message: "Statistical Methods for Management, Strategic Management, Managercial Accounting Bonds, Derivates, Principles of Economics, Finance"
+		message: "Statistical Methods for Management, Strategic Management, Managerial Accounting, Bonds, Derivatives, Principles of Economics, Finance"
 	}, {
 		name: "Bachelor's Degree in Clinical Psychology",
 		type: "E",
@@ -55,7 +55,7 @@ function TimelineService(){
 		dateFrom: Date.parse("Aug, 2005"),
 		dateTo: Date.parse("Dec, 2008"),
 		message: "General Psychology, Psychological Statistics, Research Methodology, Sociology, Cognitive Processing"
-	},  {
+	}, {
 		name: "Providence Marathon Finisher",
 		type: "P",
 		message: "I finished in around 4 hours.  The last 20 minutes were the longest!",
