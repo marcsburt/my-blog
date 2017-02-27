@@ -9,7 +9,7 @@ function PostNewController(AddRemoveService, $state){
 			description: '',
 			title: '',
 			tags: '',
-			shared: '',
+			shared: 0,
 			upvoted: ''
 		}
 	}
