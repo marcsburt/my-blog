@@ -38,7 +38,7 @@
 body, html{
 
   font-family: 'Poppins', sans-serif;
-  background-color: #E6E6E6;
+  background-color: #FFFFFF;
   height: 100%;
 }  
 
@@ -52,11 +52,19 @@ p {
   line-height: 1.7;
 
 }
+li {
+    font-size: 1.3em;
+  line-height: 1.7;
+}
 
 hr{ 
 
 border-top:1px #CCCCCC solid;
 
+}
+p a{
+      font-size: 1.0em;
+  line-height: 1.7;
 }
 
 .hr-bold{ 
@@ -230,8 +238,10 @@ a:hover{
     box-shadow: 0 0 3px 2px rgba(0, 0, 0, .5);
 }
 
-
-/*# sourceMappingURL=ng-table.css.map*/
+.indent-instruct{
+  margin-left: 15px;
+  margin-right: 15px;
+}
 
 
 

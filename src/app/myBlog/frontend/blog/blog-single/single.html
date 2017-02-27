@@ -1,54 +1,56 @@
 <div class="container blog-container">
-	<div class = "col-lg-10 col-lg-offset-1 blog-post">
+	<div class = "col-lg-12 blog-post">
 		<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.title}}</h1>
-		<div class = "text-center">
-			<a href=""
-				class="btn btn-social btn-twitter"
-				ng-click = "$ctrl.shared();"
-				socialshare
-				socialshare-provider="twitter"
-				socialshare-text="{{$ctrl.singlePost.title}}"
-				socialshare-hashtags=""
-				socialshare-url="{{$ctrl.currentUrl}}">
-				<span class="fa fa-twitter"></span>
-			</a>
-			<a href=""
-				ng-click = "$ctrl.shared();"
-				class="btn btn-social btn-facebook"
-				socialshare
-				socialshare-provider="facebook"
-				socialshare-title="{{$ctrl.singlePost.title}}"
-				socialshare-description = "{{$ctrl.singlePost.description}}"
-				socialshare-url="{{$ctrl.currentUrl}}">
-				<span class="fa fa-facebook"></span>
-			</a>
-			<a href=""
-				class="btn btn-social btn-linkedin"
-				ng-click = "$ctrl.shared();"
-				socialshare
-				socialshare-provider="linkedin"
-				socialshare-text="{{$ctrl.singlePost.title}}"
-				socialshare-description="{{$ctrl.singlePost.description}}"
-				socialshare-source="{{$ctrl.currentUrl}}">
-				<span class="fa fa-linkedin"></span>
-			</a>
-			<a href=""
-				ng-click = "$ctrl.shared();"
-				class="btn btn-social btn-envelope"
-				socialshare
-				socialshare-provider="email"
-				socialshare-subject="{{$ctrl.singlePost.title}}"
-				socialshare-body="{{$ctrl.currentUrl}}">
-				<span class="fa fa-envelope"></span>
-			</a>
-
-		</div>
-		<h4 class = "blog-post-description text-center">Written by: {{$ctrl.singlePost.author}}</h4>
-		<div class = "text-center">
-			<i>{{$ctrl.singlePost.date | date: 'MMM dd, yyyy'}}</i>
-		</div>
+		<div class = "col-md-10 col-md-offset-1">
+			<h3 class = "text-center">{{$ctrl.singlePost.description}}</h3>
+			<h4 class = "blog-post-description text-center">Written by: {{$ctrl.singlePost.author}}</h4>
+			<div class = "text-center">
+				<a href=""
+					class="btn btn-social btn-twitter"
+					ng-click = "$ctrl.shared();"
+					socialshare
+					socialshare-provider="twitter"
+					socialshare-text="{{$ctrl.singlePost.title}}"
+					socialshare-hashtags=""
+					socialshare-url="{{$ctrl.currentUrl}}">
+					<span class="fa fa-twitter"></span>
+				</a>
+				<a href=""
+					ng-click = "$ctrl.shared();"
+					class="btn btn-social btn-facebook"
+					socialshare
+					socialshare-provider="facebook"
+					socialshare-title="{{$ctrl.singlePost.title}}"
+					socialshare-description = "{{$ctrl.singlePost.description}}"
+					socialshare-url="{{$ctrl.currentUrl}}">
+					<span class="fa fa-facebook"></span>
+				</a>
+				<a href=""
+					class="btn btn-social btn-linkedin"
+					ng-click = "$ctrl.shared();"
+					socialshare
+					socialshare-provider="linkedin"
+					socialshare-text="{{$ctrl.singlePost.title}}"
+					socialshare-description="{{$ctrl.singlePost.description}}"
+					socialshare-source="{{$ctrl.currentUrl}}">
+					<span class="fa fa-linkedin"></span>
+				</a>
+				<a href=""
+					ng-click = "$ctrl.shared();"
+					class="btn btn-social btn-envelope"
+					socialshare
+					socialshare-provider="email"
+					socialshare-subject="{{$ctrl.singlePost.title}}"
+					socialshare-body="{{$ctrl.currentUrl}}">
+					<span class="fa fa-envelope"></span>
+				</a>
+			</div>
+			<div class = "text-center">
+				<i>{{$ctrl.singlePost.date | date: 'MMMM dd, yyyy'}}</i>
+			</div>
 		<hr>
 		<br>
+		</div>
 		<div class="col-lg-10 col-lg-offset-1">
 			<div
 				align = "justify"
