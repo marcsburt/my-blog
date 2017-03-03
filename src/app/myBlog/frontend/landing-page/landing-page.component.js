@@ -14,12 +14,9 @@ angular
 			.state('landing', {
 				url: '/landing',
 				component: 'landingPage',
-				// bindings: {
-				// 	landingPosts: 'landing'
-				// },
 				resolve:{
 					landing: function(BlogService){
-						return BlogService.getFireBlog();
+						return BlogService.getAllPosts().$loaded();
 					}
 				}
 			});

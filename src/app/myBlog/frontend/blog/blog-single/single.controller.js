@@ -4,8 +4,8 @@ function SinglePostController($location, $stateParams, BlogService){
 	
 	ctrl.singlePost = BlogService.getPostById($stateParams.id);
 	ctrl.currentUrl = $location.absUrl();
-	ctrl.shared = function(){
-		ctrl.singlePost.shared += 1;
+	ctrl.shared = function() {
+		ctrl.singlePost.allow_restrict.shared += 1;
 		return BlogService.updatePost(ctrl.singlePost);
 	}
 

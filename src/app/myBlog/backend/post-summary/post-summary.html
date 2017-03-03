@@ -1,14 +1,9 @@
 <div class = "container-fluid blog-container">
-<!-- <pre>{{$ctrl.posts | json}}</pre> -->
 <div class="col-md-10 col-md-offset-1">
-	
 	<div class="text-center">
 		<h1>Summary of Live Posts</h1>
 		<br>
 		<br>
-
-	</div>
-
 		<table st-table="$ctrl.posts" class="table table-striped">
 			<thead>
 				<tr>
@@ -29,37 +24,36 @@
 			<tbody>
 				<tr ng-repeat-start="post in $ctrl.posts">
 					<td>
-						<button ng-if="post.expanded" ng-click="post.expanded = false">-</button> 
+						<button ng-if="post.expanded" ng-click="post.expanded = false">-</button>
 						<button ng-if="!post.expanded" ng-click="post.expanded = true">+</button>
-
 					</td>
-					<td>{{post.date | date: 'medium'}}</td>
-					<td>{{post.title}}</td>
-					<td>{{post.shared}}</td>
-					<td>{{post.upvoted}}</td>
-					<td><ul class = "list-unstyled"><li ng-repeat = "tag in post.tags">{{tag.text}}</li></ul></td>
+					<td>{{post.allow_user_write.date | date: 'medium'}}</td>
+					<td>{{post.allow_user_write.title}}</td>
+					<td>{{post.allow_restrict.shared}}</td>
+					<td>{{post.allow_restrict.upvoted}}</td>
+					<td><ul class = "list-unstyled"><li ng-repeat = "tag in post.allow_user_write.tags">{{tag.text}}</li></ul></td>
 					<td><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
 				</tr>
 				<tr ng-if="post.expanded" ng-repeat-end="">
 					<td colspan="12"><div class = "col-md-10 col-md-offset-1">
 						<br>
-						<blockquote>{{post.description}}</blockquote>
-						<br>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<td colspan="12" class="text-center">
-					<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
-				</td>
-			</tr>
-		</tfoot>
-	</table>
-	<br>
-	<br>
-	<br>
-	<br>
+					<blockquote>{{post.allow_user_write.description}}</blockquote>
+					<br>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+	<tfoot>
+	<tr>
+		<td colspan="12" class="text-center">
+			<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
+		</td>
+	</tr>
+	</tfoot>
+</table>
+<br>
+<br>
+<br>
+<br>
 </div>
 </div>

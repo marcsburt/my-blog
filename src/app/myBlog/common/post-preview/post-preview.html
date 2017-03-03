@@ -4,12 +4,12 @@
 	<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview">
 	<div>
 		
-		<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.title}}</h1></a>
+		<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
 	</div>
-		<span class = "post-preview-date"><i>{{post.date | date: 'MMM dd, yyyy @ h:mm a'}}</i></span>
+		<span class = "post-preview-date"><i>{{post.allow_user_write.date | date: 'MMM dd, yyyy @ h:mm a'}}</i></span>
 		<br>
 	
-		<p class = "post-preview-description">{{post.description}}</p>
+		<p class = "post-preview-description">{{post.allow_user_write.description}}</p>
 
 		<a ui-sref = "singlepost({id: post.$id})">
 			<div class = "btn btn-default btn-xs">

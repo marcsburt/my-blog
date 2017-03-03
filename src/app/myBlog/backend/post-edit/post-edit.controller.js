@@ -1,7 +1,7 @@
-function PostEditController(AddRemoveService, $state, $window){
+function PostEditController(BlogService, $state, $window){
 	var ctrl = this;
 	ctrl.updatePost = function(event){
-		return AddRemoveService
+		return BlogService
 			.updatePost(event.post)
 			.then(function(){
 				$state.go('summary')
@@ -11,7 +11,7 @@ function PostEditController(AddRemoveService, $state, $window){
 	ctrl.deletePost = function(event){
 		var message = 'Do you really want to delete ' + event.post.title +'from posts?'
 		if($window.confirm(message)){
-			return AddRemoveService
+			return BlogService
 				.deletePost(event.post)
 				.then(function(){
 					$state.go('summary')

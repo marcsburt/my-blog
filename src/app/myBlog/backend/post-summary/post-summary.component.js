@@ -1,6 +1,7 @@
 var postSummary = {
 	bindings:{
-		posts: '<'
+		posts: '<',
+		display: '<'
 	},
 	templateUrl: './post-summary.html',
 	controller: 'PostSummaryController'
@@ -17,7 +18,10 @@ angular
 				component: 'postSummary',
 				resolve:{
 					posts: function(BlogService){
-						return BlogService.getFireBlog().$loaded();
+						return BlogService.getAllPosts().$loaded();
+					},
+					display: function(BlogService){
+						return BlogService.getAllPosts().$loaded();
 					}
 				}
 			});
