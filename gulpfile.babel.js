@@ -73,7 +73,7 @@ gulp.task('modules', ['templates'], () => {
     .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', ['clean'], () => {
   return gulp.src(paths.styles)
     .pipe(sass({
       outputStyle: 'compressed',
@@ -145,8 +145,8 @@ gulp.task('default', [
 gulp.task('production', [
 
   'copy',
+  'scripts',
   'styles',
   'fonts',
-  'scripts',
   'firebase'
 ]);

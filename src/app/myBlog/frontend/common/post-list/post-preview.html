@@ -6,7 +6,7 @@
 		
 		<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
 	</div>
-		<span class = "post-preview-date"><i>{{post.allow_user_write.date | date: 'MMM dd, yyyy @ h:mm a'}}</i></span>
+		<span class = "post-preview-date"><i>{{post.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i></span>
 		<br>
 	
 		<p class = "post-preview-description">{{post.allow_user_write.description}}</p>

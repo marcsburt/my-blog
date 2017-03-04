@@ -1,27 +1,19 @@
 {
   "rules": {
     ".read": true,
+    ".write": false,
     "contact": {
       ".read": true,
       ".write": true
     },
-    "blog" : {
-      "allow_restrict" :{
+    "$blog" : {
+        ".write": false,
+      "$allow_restrict" :{
         ".write": true
       },
   
       "allow_user_write" :{
-          ".write": "auth != null",
-      },
-
-      "$uid": {
-        ".read": "$uid === auth.uid",
-        ".write": "$uid === auth.uid"
-      },
-        
-      "posts":{
-        ".read": true,
-        ".write": true
+          ".write": "auth != null"
       }
     }
   }
