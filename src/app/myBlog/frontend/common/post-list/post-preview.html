@@ -1,16 +1,31 @@
 <div
-	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10 | orderBy: '-date'"
+	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10 | orderBy: '-allow_user_write.date'"
 	pagination-id = "postId">
 	<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview">
 		<div>
-			
 			<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
 		</div>
 		<span class = "post-preview-date"><i>{{post.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i></span>
 		<br>
 		
 		<p class = "post-preview-description">{{post.allow_user_write.description}}</p>
+		<div class = "col-xs-6" style = "padding-left: 0px;">
 		<p class = "small"><a ui-sref = "singlepost({id: post.$id})">Read More</a></p>
+		</div>
+		<div class = "col-xs-6 text-right">
+		<span class="fa fa-comment"></span>
+		<span class="badge badge-notify"></span>
+		<a href = ""
+			class="fa fa-share-alt"
+			uib-popover-template = "'{{$ctrl.popoverShare.templateUrl}}'"
+			popover-animation="true"
+			popover-placement = "bottom"
+			popover-trigger = "'outsideClick'">
+			</a>
+		<span class="badge badge-notify">{{post.allow_restrict.shared}}</span>
+		<span class="fa fa-thumbs-up"></span>
+		<span class="badge">{{post.allow_restrict.upvoted}}</span>
+		</div>
 		<hr>
 	</div>
 </div>

@@ -1,0 +1,53 @@
+<div class = "text-center">
+
+<a 
+	class="fa fa-2x fa-twitter"
+	href=""
+	class="btn btn-social btn-twitter"
+	ng-click = "$ctrl.shared();"
+	socialshare
+	socialshare-provider="twitter"
+	socialshare-text="{{$ctrl.singlePost.allow_user_write.title}}"
+	socialshare-hashtags=""
+	socialshare-url="{{$ctrl.currentUrl}}">&emsp;
+</a>
+
+	
+<a class="fa fa-2x fa-facebook" 
+	href=""
+	ng-click = "$ctrl.shared();"
+	class="btn btn-social btn-facebook"
+	socialshare
+	socialshare-provider="facebook"
+	socialshare-title="{{$ctrl.singlePost.allow_user_write.title}}"
+	socialshare-description = "{{$ctrl.singlePost.allow_user_write.description}}"
+	socialshare-url="{{$ctrl.currentUrl}}"> 
+</a>
+<br>
+
+
+<a class="fa fa-2x fa-linkedin" 
+	href=""
+	class="btn btn-social btn-linkedin"
+	ng-click = "$ctrl.shared();"
+	socialshare
+	socialshare-provider="linkedin"
+	socialshare-text="{{$ctrl.singlePost.allow_user_write.title}}"
+	socialshare-description="{{$ctrl.singlePost.allow_user_write.description}}"
+	socialshare-source="{{$ctrl.currentUrl}}">&emsp;
+</a>
+
+
+	
+<a 
+	class="fa fa-2x fa-envelope"
+	href=""
+	ng-click = "$ctrl.shared();"
+	class="btn btn-social btn-envelope"
+	socialshare
+	socialshare-provider="email"
+	socialshare-subject="{{$ctrl.singlePost.allow_user_write.title}}"
+	socialshare-body="{{$ctrl.currentUrl}}">
+</a>
+
+</div>

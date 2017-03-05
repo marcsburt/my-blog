@@ -1,10 +1,17 @@
 <div class="container blog-container">
 	<div class = "col-lg-12 blog-post">
+	<div class = "row">
+	<div class = "col-lg-10 col-lg-offset-1">
 		<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.allow_user_write.title}}</h1>
-		<div class = "col-md-10 col-md-offset-1">
+		</div>
+		</div>
+		<div class = "row">
+		<div class = "col-md-8 col-md-offset-2">
 			<h3 class = "text-center">{{$ctrl.singlePost.allow_user_write.description}}</h3>
 			<h4 class = "blog-post-description text-center">Written by: {{$ctrl.singlePost.allow_user_write.author}}</h4>
-			<div class = "text-center">
+			</div>
+			</div>
+			<div class = "row text-center">
 				<a href=""
 					class="btn btn-social btn-twitter"
 					ng-click = "$ctrl.shared();"
@@ -45,7 +52,7 @@
 					<span class="fa fa-envelope"></span>
 				</a>
 			</div>
-			<div class = "text-center">
+			<div class = "row text-center">
 				<i>{{$ctrl.singlePost.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i>
 			</div>
 			<hr>
