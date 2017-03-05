@@ -1,4 +1,4 @@
-function PostNewController(BlogService, $state){
+function PostNewController(BlogService, $state, $window, $uibModal){
 
 	var ctrl = this;
 	ctrl.$onInit = function() {
@@ -18,9 +18,11 @@ function PostNewController(BlogService, $state){
 			allow_restrict: {
 				shared: 0,
 				upvoted: 0,
+				comment: []
 			}
 		}
 	}
+	//create new post and push to Blog Service then change to summary state
 	ctrl.createNewPost = function(event){
 		return BlogService
 			.createNewPost(event.post)
@@ -28,6 +30,25 @@ function PostNewController(BlogService, $state){
 				$state.go('summary', {})
 			})
 	}
+
+	//preview post in modal
+	ctrl.animationsEnabled = true;
+
+	ctrl.previewPost = function(event) {
+		var modalInstance = $uibModal.open({
+			windowClass: 'app-modal-window-preview',
+			animation: ctrl.animationsEnabled,
+			component: 'modalComponent',
+			//resolve event of post and give it to post
+			resolve: {
+				post: function() {
+					return event.post;
+				}
+			}
+		});
+	}
+
+
 }
 
 angular

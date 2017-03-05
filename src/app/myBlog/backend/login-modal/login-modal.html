@@ -1,0 +1,30 @@
+<div class="modal-header text-center">
+	<h2 class="modal-title" id="modal-title">Login</h2>
+</div>
+<div class="modal-body-login" id="modal-body">
+	<form class = "form-signin" name="authForm" novalidate ng-submit="$ctrl.submitForm();">
+		<input
+		class = "form-control"
+		type="email"
+		name="email"
+		required="required"
+		placeholder="Enter your email"
+		ng-model="$ctrl.user.email">
+		<input
+		class = "form-control"
+		type="password"
+		name="password"
+		required="required"
+		placeholder="Enter your password"
+		ng-model="$ctrl.user.password">
+		<br>
+		<div ng-if="$ctrl.error">
+			{{ $ctrl.error }}
+		</div>
+		<div class = "text-center">
+		<button class="btn btn-primary" type="submit" ng-disabled="authForm.$invalid" ng-click = "$ctrl.submitForm()"> Login {{$ctrl.button}}
+		</button>
+		<button class="btn btn-danger" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+		</div>
+	</form>
+</div>

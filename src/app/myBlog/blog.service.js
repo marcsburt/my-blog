@@ -1,21 +1,24 @@
 function BlogService(AuthService, $firebaseRef, $firebaseArray, $firebaseObject) {
+	var ref = $firebaseRef.blog;
 
 	if (AuthService.getUser() == !null){
 		var uid = AuthService.getUser().uid;
 		console.log(uid)
 	}
-	var ref = $firebaseRef.allposts;
-	var baseRef = $firebaseRef.blog;
 
+	//get all blog posts --
+	this.getAllPosts = function() {
+		return $firebaseArray(ref);
+	}
+	//get all posts by specific id
 	this.getPostById = function(postid) {
-		return $firebaseObject(baseRef.child(postid))
+		return $firebaseObject(ref.child(postid))
 	}
 
-	//creat new post under /blog -- change this th
+	//create new post under /blog -- change this th
 	this.createNewPost = function(post) {
-		return $firebaseArray(baseRef).$add(post);
+		return $firebaseArray(ref).$add(post);
 	}
-
 	//input post and delete it behind UID
 	this.deletePost = function(post){
 		return post.$remove();
@@ -24,11 +27,10 @@ function BlogService(AuthService, $firebaseRef, $firebaseArray, $firebaseObject)
 	this.updatePost = function(post){
 		return post.$save()
 	}
-	//get all blog posts --
-	this.getAllPosts = function() {
-		return $firebaseArray(baseRef);
+	// add comment to the blog
+	this.createNewComment = function(postId, newComment) {
+		return $firebaseArray(ref.child(postId).child('allow_restrict').child('comments')).$add(newComment)
 	}
-
 }
 
 angular

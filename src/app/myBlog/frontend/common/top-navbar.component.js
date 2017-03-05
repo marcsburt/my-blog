@@ -1,5 +1,6 @@
 var topNavbar = {
-	templateUrl: './top-navbar.html'
+	templateUrl: './top-navbar.html',
+	controller: 'TopNavbarController'
 }
 
 angular

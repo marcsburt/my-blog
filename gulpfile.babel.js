@@ -41,7 +41,8 @@ const paths = {
     'ng-tags-input/build/ng-tags-input.js',
     'angular-sanitize/angular-sanitize.js',
     'angular-socialshare/dist/angular-socialshare.js',
-    'angular-smart-table/dist/smart-table.js'
+    'angular-smart-table/dist/smart-table.js',
+    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
   ],
   static: [
     `${root}/index.html`,
@@ -73,7 +74,7 @@ gulp.task('modules', ['templates'], () => {
     .pipe(gulp.dest(paths.dist + 'js/'));
 });
 
-gulp.task('styles', ['clean'], () => {
+gulp.task('styles', () => {
   return gulp.src(paths.styles)
     .pipe(sass({
       outputStyle: 'compressed',
@@ -119,9 +120,8 @@ gulp.task('copy', ['clean'], () => {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('watch', ['serve', 'scripts'], () => {
-  gulp.watch([paths.scripts, paths.templates], ['scripts']);
-  gulp.watch(paths.styles, ['styles']);
+gulp.task('watch', ['serve', 'scripts', 'styles'], () => {
+  gulp.watch([paths.scripts, paths.templates, paths.styles], ['scripts', 'styles']);
 });
 
 gulp.task('firebase', ['styles', 'scripts'], cb => {
@@ -133,12 +133,12 @@ gulp.task('firebase', ['styles', 'scripts'], cb => {
 });
 
 gulp.task('default', [
-
+  'clean',
   'copy',
   'scripts',
+  'fonts',
   'styles',
   'serve',
-  'fonts',
   'watch'
 ]);
 

@@ -30,6 +30,14 @@ function PostDetailController(){
 	  	});
 	  };
 
+	  ctrl.previewPost = function(){
+	  	ctrl.onPreview({
+	  		$event: {
+	  			post: ctrl.post
+	  		}
+	  	})
+	  }
+	  
 }
 
 angular

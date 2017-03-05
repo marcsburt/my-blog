@@ -9,7 +9,8 @@ angular
     'ngTagsInput',
     'ngSanitize',
     '720kb.socialshare',
-    'smart-table'
+    'smart-table',
+    'ui.bootstrap'
   ])
 
 .config(function($firebaseRefProvider) {
@@ -25,9 +26,8 @@ angular
       .registerUrl({
         default: config.databaseURL,
         blog: config.databaseURL + '/blog',
-        allposts: config.databaseURL + '/blog/A30T1oiY9DQtUmoA73HTFTS3MbD2',
-        timeline: config.databaseURL + '/timeline',
-        contact: config.databaseURL + '/contact'
+        contact: config.databaseURL + '/contact',
+        comment: config.databaseURL + '/comment'
       })
 
     firebase.initializeApp(config);

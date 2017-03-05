@@ -1,59 +1,46 @@
 <div class = "container-fluid blog-container">
-<div class="col-md-10 col-md-offset-1">
-	<div class="text-center">
-		<h1>Summary of Live Posts</h1>
-		<br>
-		<br>
-		<table st-table="$ctrl.posts" class="table table-striped">
-			<thead>
+	<div class="col-md-10 col-md-offset-1">
+		<div class="text-center">
+			<h1>Summary of Live Posts</h1>
+			<br>
+			<br>
+			<table st-table="$ctrl.posts" class="table table-striped">
+				<thead>
+					<tr>
+						<th st-sort = "date" st-sort-default="true">Date</th>
+						<th st-sort = "email">Shared</th>
+						<th st-sort = "upvoted">Votes</th>
+						<th st-sort = "title">Title</th>
+						<th>Description</th>
+						<th></th>
+					</tr>
+					<tr>
+						<th colspan="2">
+							<input st-search class="form-control" placeholder="global search ..." type="search"/>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="post in $ctrl.posts">
+						<td>{{post.allow_user_write.date | date: 'medium'}}</td>
+						<td>{{post.allow_restrict.shared}}</td>
+						<td>{{post.allow_restrict.upvoted}}</td>
+						<td>{{post.allow_user_write.title}}</td>
+						<td>{{post.allow_user_write.description}}</td>
+						<td><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
+					</tr>
+				</tbody>
+				<tfoot>
 				<tr>
-					<th>	Expand Description</th>
-					<th st-sort = "date" st-sort-default="true">Date</th>
-					<th st-sort = "title">Title</th>
-					<th st-sort = "email">Shared</th>
-					<th st-sort = "upvoted">Votes</th>
-					<th>Tags</th>
-					<th></th>
-				</tr>
-				<tr>
-					<th colspan="2">
-						<input st-search class="form-control" placeholder="global search ..." type="search"/>
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat-start="post in $ctrl.posts">
-					<td>
-						<button ng-if="post.expanded" ng-click="post.expanded = false">-</button>
-						<button ng-if="!post.expanded" ng-click="post.expanded = true">+</button>
+					<td colspan="12" class="text-center">
+						<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
 					</td>
-					<td>{{post.allow_user_write.date | date: 'medium'}}</td>
-					<td>{{post.allow_user_write.title}}</td>
-					<td>{{post.allow_restrict.shared}}</td>
-					<td>{{post.allow_restrict.upvoted}}</td>
-					<td><ul class = "list-unstyled"><li ng-repeat = "tag in post.allow_user_write.tags">{{tag.text}}</li></ul></td>
-					<td><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
 				</tr>
-				<tr ng-if="post.expanded" ng-repeat-end="">
-					<td colspan="12"><div class = "col-md-10 col-md-offset-1">
-						<br>
-					<blockquote>{{post.allow_user_write.description}}</blockquote>
-					<br>
-				</div>
-			</td>
-		</tr>
-	</tbody>
-	<tfoot>
-	<tr>
-		<td colspan="12" class="text-center">
-			<div st-pagination="" st-items-by-page="$ctrl.itemsByPage" st-displayed-pages="7"></div>
-		</td>
-	</tr>
-	</tfoot>
-</table>
-<br>
-<br>
-<br>
-<br>
-</div>
-</div>
+				</tfoot>
+			</table>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+	</div>

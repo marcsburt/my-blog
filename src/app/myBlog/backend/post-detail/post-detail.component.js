@@ -3,7 +3,8 @@ var postDetail = {
 		post: '<',
 		onSave: '&',
 		onDelete: '&',
-		onUpdate: '&'
+		onUpdate: '&',
+		onPreview: '&'
 	},
 	templateUrl: './post-detail.html',
 	controller: 'PostDetailController'

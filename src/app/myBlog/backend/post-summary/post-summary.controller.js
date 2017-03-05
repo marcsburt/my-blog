@@ -2,6 +2,7 @@ function PostSummaryController(BlogService, NgTableParams, $state, $window) {
 	var ctrl = this;
 	ctrl.$onInit = function() {
 	}
+	
 	ctrl.createNewPost = function(event) {
 		var date = new D
 		event.post.date = date;
@@ -13,11 +14,13 @@ function PostSummaryController(BlogService, NgTableParams, $state, $window) {
 				})
 			})
 	}
+
 	ctrl.selectPostEdit = function(postId) {
 		$state.go('edit', {
 			id: postId
 		})
 	}
+
 	ctrl.deletePost = function(post) {
 		console.log(post)
 		var message = 'Do you really want to delete ' + post + 'from posts?';
@@ -32,23 +35,8 @@ function PostSummaryController(BlogService, NgTableParams, $state, $window) {
 				})
 		}
 	}
-
-	//testing new features
-
-	ctrl.addToTest = function(postid) {
-		return BlogService
-			.addTest(postid)
-	}
-	ctrl.addTestPost = function() {
-		return BlogService
-			.addTestPost(ctrl.post)
-	}
-
-	//test shared feature
-
-
-
 }
+
 
 angular
 	.module('myBlog')

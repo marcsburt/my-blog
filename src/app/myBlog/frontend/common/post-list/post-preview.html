@@ -1,28 +1,21 @@
-<div 
+<div
 	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10 | orderBy: '-date'"
 	pagination-id = "postId">
 	<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview">
-	<div>
-		
-		<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
-	</div>
+		<div>
+			
+			<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
+		</div>
 		<span class = "post-preview-date"><i>{{post.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i></span>
 		<br>
-	
+		
 		<p class = "post-preview-description">{{post.allow_user_write.description}}</p>
-
-		<a ui-sref = "singlepost({id: post.$id})">
-			<div class = "btn btn-default btn-xs">
-			Read More
-			</div>
-			</a>
-
-
+		<p class = "small"><a ui-sref = "singlepost({id: post.$id})">Read More</a></p>
 		<hr>
 	</div>
 </div>
 <div class = "row text-center">
-<dir-pagination-controls pagination-id="postId"></dir-pagination-controls>
+	<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview">		
+		<dir-pagination-controls pagination-id="postId"></dir-pagination-controls>
+	</div>
 </div>
-<br>
-<br>
