@@ -1,0 +1,18 @@
+<button href = ""
+	class="btn btn-popover"
+	uib-popover-template = "'{{$ctrl.popoverShare.templateUrl}}'"
+	popover-animation="true"
+	popover-placement = "bottom"
+	popover-trigger = "'outsideClick'">Share: <span class = "fa fa-share-alt"></span>
+</button>
+<span class="badge badge-notify">{{$ctrl.post.allow_restrict.shared}}</span>
+<button
+	class = "btn btn-popover"
+	ng-disabled="$ctrl.buttonDisabled"
+	ng-click = "$ctrl.upvoted();">Like:
+<span class="fa fa-thumbs-up"></span>
+</button>
+<span class="badge badge-notify">{{$ctrl.post.allow_restrict.upvoted}}</span>
+<button class = "btn btn-popover"><span class="fa fa-comment"></span>
+</button>
+<span class="badge badge-notify">2</span>

@@ -1,62 +1,23 @@
 <div class="container blog-container">
 	<div class = "col-lg-12 blog-post">
-	<div class = "row">
-	<div class = "col-lg-10 col-lg-offset-1">
-		<h1 class = "text-center" style = "font-weight: bolder;">{{$ctrl.singlePost.allow_user_write.title}}</h1>
-		</div>
-		</div>
 		<div class = "row">
-		<div class = "col-md-8 col-md-offset-2">
-			<h3 class = "text-center">{{$ctrl.singlePost.allow_user_write.description}}</h3>
-			<h4 class = "blog-post-description text-center">Written by: {{$ctrl.singlePost.allow_user_write.author}}</h4>
+			<div class = "text-center col-lg-10 col-lg-offset-1">
+				<h1 style = "font-weight: bolder;">{{$ctrl.singlePost.allow_user_write.title}}</h1>
 			</div>
+		</div>
+		<div class = "row text-center">
+			<div class = "text-center col-lg-10 col-lg-offset-1">
+				<h3>{{$ctrl.singlePost.allow_user_write.description}}</h3>
+				<p>Written by: {{$ctrl.singlePost.allow_user_write.author}}</p>
 			</div>
-			<div class = "row text-center">
-				<a href=""
-					class="btn btn-social btn-twitter"
-					ng-click = "$ctrl.shared();"
-					socialshare
-					socialshare-provider="twitter"
-					socialshare-text="{{$ctrl.singlePost.allow_user_write.title}}"
-					socialshare-hashtags=""
-					socialshare-url="{{$ctrl.currentUrl}}">
-					<span class="fa fa-twitter"></span>
-				</a>
-				<a href=""
-					ng-click = "$ctrl.shared();"
-					class="btn btn-social btn-facebook"
-					socialshare
-					socialshare-provider="facebook"
-					socialshare-title="{{$ctrl.singlePost.allow_user_write.title}}"
-					socialshare-description = "{{$ctrl.singlePost.allow_user_write.description}}"
-					socialshare-url="{{$ctrl.currentUrl}}">
-					<span class="fa fa-facebook"></span>
-				</a>
-				<a href=""
-					class="btn btn-social btn-linkedin"
-					ng-click = "$ctrl.shared();"
-					socialshare
-					socialshare-provider="linkedin"
-					socialshare-text="{{$ctrl.singlePost.allow_user_write.title}}"
-					socialshare-description="{{$ctrl.singlePost.allow_user_write.description}}"
-					socialshare-source="{{$ctrl.currentUrl}}">
-					<span class="fa fa-linkedin"></span>
-				</a>
-				<a href=""
-					ng-click = "$ctrl.shared();"
-					class="btn btn-social btn-envelope"
-					socialshare
-					socialshare-provider="email"
-					socialshare-subject="{{$ctrl.singlePost.allow_user_write.title}}"
-					socialshare-body="{{$ctrl.currentUrl}}">
-					<span class="fa fa-envelope"></span>
-				</a>
-			</div>
-			<div class = "row text-center">
-				<i>{{$ctrl.singlePost.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i>
-			</div>
+		</div>
+		<div class = "row text-center">
+			<post-popover post = "$ctrl.singlePost">
+			</post-popover>
+		</div>
+		<div class = "row text-center">
+			<p><i>{{$ctrl.singlePost.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i></p>
 			<hr>
-			<br>
 		</div>
 		<div class = "row">
 			<div class="col-lg-10 col-lg-offset-1">
@@ -65,61 +26,59 @@
 					ng-bind-html = "$ctrl.singlePost.allow_user_write.body"
 					>
 				</div>
-				<hr>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2">
-				<label>Leave a comment:</label>
-				<form
-					name = "commentDetailForm"
-					novalidate>
-					<div class="form-group form-condensed">
-						<input
-						type="text"
-						required="required"
-						class="form-control"
-						placeholder="* Name"
-						ng-model = "$ctrl.comment.name">
-					</div>
-					<div class="form-group form-condensed">
-						<input
-						type="email"
-						required="required"
-						class="form-control"
-						placeholder="* Email (will not be shared)"
-						ng-model = "$ctrl.comment.email">
-					</div>
-					<div class="form-group form-condensed">
-						<textarea
-						type="text"
-						class="form-control"
-						required="required"
-						placeholder="* Leave a comment..."
-						rows="3"
-						ng-model = "$ctrl.comment.message"></textarea>
-						<button
-						type="submit"
-						class="btn btn-default btn-xs"
-						ng-disabled="commentDetailForm.$invalid"
-						ng-click="$ctrl.addComment();">Comment</button>
-					</div>
-				</form>
-			</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<label>Leave a comment:</label>
+			<form
+				name = "commentDetailForm"
+				novalidate>
+				<div class="form-group form-condensed">
+					<input
+					type="text"
+					required="required"
+					class="form-control"
+					placeholder="* Name"
+					ng-model = "$ctrl.comment.name">
+				</div>
+				<div class="form-group form-condensed">
+					<input
+					type="email"
+					required="required"
+					class="form-control"
+					placeholder="* Email (will not be shared)"
+					ng-model = "$ctrl.comment.email">
+				</div>
+				<div class="form-group form-condensed">
+					<textarea
+					type="text"
+					class="form-control"
+					required="required"
+					placeholder="* Leave a comment..."
+					rows="3"
+					ng-model = "$ctrl.comment.message"></textarea>
+					<button
+					type="submit"
+					class="btn btn-default btn-xs"
+					ng-disabled="commentDetailForm.$invalid"
+					ng-click="$ctrl.addComment();">Comment</button>
+				</div>
+			</form>
 		</div>
-		<br>
-		<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
-			<div class="col-sm-8 col-sm-offset-2">
-
-					<hr>
-					<label>{{comment.name}} Commented:</label>
-					<blockquote class = "comment">
-						{{comment.message}}
-					</blockquote>
-					<i class = "small">{{comment.date | date: 'MMMM dd, yyyy'}}</i>
-					<hr>
-
-			</div>
+	</div>
+	<br>
+	<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
+		<div class="col-sm-8 col-sm-offset-2">
+			<hr>
+			<label>{{comment.name}} Commented:</label>
+			<blockquote class = "comment">
+				{{comment.message}}
+			</blockquote>
+			<i class = "small">{{comment.date | date: 'MMMM dd, yyyy'}}</i>
+			<hr>
 		</div>
 	</div>
 </div>

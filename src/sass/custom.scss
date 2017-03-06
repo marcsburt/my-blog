@@ -373,3 +373,33 @@ p.comment{
 .popover-content {
   width: 100%;
 }
+
+.btn.btn-popover{
+  background: none;
+  border: none;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+
+
+.btn.btn-popover:hover, .btn.btn-popover:focus, .btn.btn-popover:active, .btn.btn-popover.active, .open > .dropdown-toggle.btn.btn-popover {
+  color: none;
+  border-color: color;
+  box-shadow: none;
+  outline: none;
+}
+.btn.btn-popover:active, .btn.btn-popover.active {
+  border-color: none;
+  color: none;
+  box-shadow: none;
+}
+
+.badge-notify{
+    position: relative;
+    text-align: center;
+    top: -15px;
+    left: -8px;
+    margin-right: -10px;
+
+}
