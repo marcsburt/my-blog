@@ -2,8 +2,7 @@
 	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10 | orderBy: '-allow_user_write.date'"
 	pagination-id = "postId">
 	<div class="row">
-		<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview" style = "border-bottom: 1px solid #B3B3B3; padding-bottom: 30px; margin-bottom: 10px;">
-
+		<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview border-bottom post-list-margin">
 			<div>
 				<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
 				<p class = "post-preview-description">{{post.allow_user_write.description}}</p>

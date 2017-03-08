@@ -389,6 +389,7 @@ p.comment{
   box-shadow: none;
   outline: none;
 }
+
 .btn.btn-popover:active, .btn.btn-popover.active {
   border-color: none;
   color: none;
@@ -401,5 +402,18 @@ p.comment{
     top: -15px;
     left: -8px;
     margin-right: -10px;
+}
 
+.border-bottom{
+  border-bottom: 1px solid #B3B3B3; 
+}
+
+.post-list-margin{
+  padding-bottom: 30px; 
+  margin-bottom: 10px;
+}
+
+.add-pad{
+  padding-bottom: 25px;
+  margin-bottom: 25px;
 }

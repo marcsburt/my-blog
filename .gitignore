@@ -6,6 +6,7 @@ node_modules
 *.sublime-*
 .jekyll-metadata
 .idea
+README.md
 npm-debug.log
 templates.js
 mocks

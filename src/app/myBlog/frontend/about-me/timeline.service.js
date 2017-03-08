@@ -65,6 +65,12 @@ function TimelineService(){
 		type: "P",
 		message: "I passed the first one and didn't have a chance to take the other two.  It's still on the bucket list though",
 		dateTo: Date.parse("Dec, 2013")
+	}, {
+		name: "Co-Founder of Business Network International Chapter",
+		type: "B",
+		place: "Brighton Group",
+		message: "Professional networking group centered around small businesses and professional services.  This group led to countless new business ventures for its members.  I became our chapter's treasurer and remained in that role throughout.",
+		dateTo: Date.parse("Feb, 2015")
 	}
 	];
 

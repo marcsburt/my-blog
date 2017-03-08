@@ -37,15 +37,3 @@
 		</form>
 	</div>
 </div>
-<br>
-<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
-	<div class="col-sm-8 col-sm-offset-2">
-		<hr>
-		<label>{{comment.name}} Commented:</label>
-		<blockquote class = "comment">
-			{{comment.message}}
-		</blockquote>
-		<i class = "small">{{comment.date | date: 'MMMM dd, yyyy'}}</i>
-		<hr>
-	</div>
-</div>
