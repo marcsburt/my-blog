@@ -42,7 +42,8 @@ const paths = {
     'angular-sanitize/angular-sanitize.js',
     'angular-socialshare/dist/angular-socialshare.js',
     'angular-smart-table/dist/smart-table.js',
-    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
+    'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+    'lodash/lodash.js'
   ],
   static: [
     `${root}/index.html`,

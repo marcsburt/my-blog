@@ -1,8 +1,9 @@
-function BlogPostController() {
+function BlogPostController(BlogService) {
 	var ctrl = this;
 	ctrl.$onInit = function (){
 		ctrl.posts = ctrl.postData
 	}
+
 }
 
 angular

@@ -31,6 +31,10 @@ function BlogService(AuthService, $firebaseRef, $firebaseArray, $firebaseObject)
 	this.createNewComment = function(postId, newComment) {
 		return $firebaseArray(ref.child(postId).child('allow_restrict').child('comments')).$add(newComment)
 	}
+	//get all comments
+	this.getAllComments = function(postId){
+		return $firebaseArray(ref.child(postId).child('allow_restrict').child('comments'))
+	}
 }
 
 angular

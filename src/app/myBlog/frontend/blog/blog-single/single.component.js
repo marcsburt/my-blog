@@ -13,6 +13,6 @@ angular
 			.state('singlepost', {
 				parent: 'common',
 				url: '/singlepost/{id}',
-				component: 'singlePost',
+				component: 'singlePost'
 			});
 	});

@@ -22,11 +22,12 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="post in $ctrl.posts">
+										  
 						<td>{{post.allow_user_write.date | date: 'medium'}}</td>
 						<td>{{post.allow_restrict.shared}}</td>
 						<td>{{post.allow_restrict.upvoted}}</td>
 						<td>{{post.allow_user_write.title}}</td>
-						<td>{{post.allow_user_write.description}}</td>
+						<!-- <td>{{post.allow_user_write.description}}</td> -->
 						<td><a href="" ng-click = $ctrl.selectPostEdit(post.$id)>Edit</a><br><a href="" ng-click = $ctrl.deletePost(post.$id)>Remove</a></td>
 					</tr>
 				</tbody>

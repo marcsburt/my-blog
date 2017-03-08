@@ -34,7 +34,7 @@
 	<post-message post = "$ctrl.singlePost"></post-message>
 	</div>
 	<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
-		<div class="col-sm-8 col-sm-offset-2 border-bottom add-pad">
+		<div class="col-sm-8 col-sm-offset-2 border-bottom add-pad" >
 			<label>{{comment.name}} Commented:</label>
 			<blockquote class = "comment small">
 				{{comment.message}}
