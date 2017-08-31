@@ -1,21 +1,16 @@
 <div class="container blog-container">
 	<div class = "col-lg-12 blog-post">
-		<div class = "row">
-			<div class = "text-center col-lg-10 col-lg-offset-1">
+		<div class = "row text-center">
+				<br>
+		</div>
+		<div class="row">
+			<div class = "text-center col-lg-8 col-md-10 col-lg-offset-2 col-md-offset-1">
 				<h1 style = "font-weight: bolder;">{{$ctrl.singlePost.allow_user_write.title}}</h1>
+				<h3 style = "margin-bottom: 20px;">{{$ctrl.singlePost.allow_user_write.description}}</h3>
+				<post-popover post = "$ctrl.singlePost">
+				</post-popover>
+				<p><i>{{$ctrl.singlePost.allow_user_write.date | date}}</i></p>
 			</div>
-		</div>
-		<div class = "row text-center">
-			<div class = "text-center col-lg-10 col-lg-offset-1">
-				<h3>{{$ctrl.singlePost.allow_user_write.description}}</h3>
-			<p><i>{{$ctrl.singlePost.allow_user_write.date | date: 'MMMM dd, yyyy'}}</i></p>
-			</div>
-		</div>
-		<div class = "row text-center border-bottom add-pad">
-			<post-popover post = "$ctrl.singlePost">
-			</post-popover>
-		</div>
-		<div class = "row text-center">
 		</div>
 		<div class = "row">
 			<div class="col-lg-10 col-lg-offset-1">
@@ -32,14 +27,14 @@
 	<hr>
 	<div class="row add-pad">
 	<post-message post = "$ctrl.singlePost"></post-message>
+</div>
+<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
+	<div class="col-sm-8 col-sm-offset-2 border-bottom add-pad" >
+		<label>{{comment.name}} Commented:</label>
+		<blockquote class = "comment small">
+			{{comment.message}}
+		</blockquote>
+		<i class = "small">{{comment.date | date: 'MMMM dd, yyyy'}}</i>
 	</div>
-	<div class="row" ng-repeat = "comment in $ctrl.singlePost.allow_restrict.comments">
-		<div class="col-sm-8 col-sm-offset-2 border-bottom add-pad" >
-			<label>{{comment.name}} Commented:</label>
-			<blockquote class = "comment small">
-				{{comment.message}}
-			</blockquote>
-			<i class = "small">{{comment.date | date: 'MMMM dd, yyyy'}}</i>
-		</div>
-	</div>
+</div>
 </div>

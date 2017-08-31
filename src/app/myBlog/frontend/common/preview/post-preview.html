@@ -1,0 +1,44 @@
+<!-- <div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<form>
+			<div class = "form-group">
+				<div class="input-group">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit" ng-click = "$ctrl.searchForPost();"><i class = " fa fa-search"></i></button>
+					</span>
+					<input type="text" class="form-control" placeholder="Search for post..." ng-model = "$ctrl.userSearch;">
+					<span class="input-group-btn">
+						<button ng-if = "$ctrl.search" class="btn btn-default" type="button" ng-click = "$ctrl.searchReset();">Reset!</button>
+					</span>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<br> -->
+<div
+	dir-paginate = "post in $ctrl.posts | itemsPerPage: 10 | orderBy: '-allow_user_write.date' | filter : $ctrl.search"
+	pagination-id = "postId">
+	<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview border-bottom post-list-margin">
+		<div>
+			<a ui-sref = "singlepost({id: post.$id})"><h1 class = "post-preview-header">{{post.allow_user_write.title}}</h1></a>
+			<p class = "post-preview-description">{{post.allow_user_write.description}}</p>
+			<br>
+		</div>
+		<div class = "hidden-xs col-sm-3" style = "padding-left: 0px;">
+			<button class = "btn btn-default btn-sm" ui-sref = "singlepost({id: post.$id})">Read More</button>
+		</div>
+		<div class = "hidden-xs col-sm-9 text-right">
+		<post-popover post = "post"></post-popover>
+	</div>
+	<div class = "visible-xs text-center">
+		<button ui-sref = "singlepost({id: post.$id})" class = "btn btn-default">Read More</button>
+		<br>
+	</div>
+</div>
+</div>
+<div class = "row text-center">
+<div class = "col-lg-8 col-md-10 col-sm-10 col-lg-offset-2 col-md-offset-1 col-sm-offset-1 post-preview">
+	<dir-pagination-controls pagination-id="postId"></dir-pagination-controls>
+</div>
+</div>

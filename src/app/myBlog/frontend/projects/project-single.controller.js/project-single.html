@@ -1,0 +1,15 @@
+<ul class="dynamic-grid" angular-grid = "$ctrl.repo" ag-grid-width = "300" ag-gutter-size = "10">
+     <li data-ng-repeat="repo in $ctrl.repo" class="grid">
+     	<div class="panel panel-default">
+     		<div class="panel-heading">
+				<p>{{repo.name}}</p>
+     		</div>
+     	  <div class="panel-body">
+     	  		<p>{{repo.description}}</p>
+     	  </div>
+   		  <div class="panel-footer">
+     	  		<p>{{repo.updated_at | date}}</p>
+     	  </div>
+     	</div>
+     </li>
+ </ul>

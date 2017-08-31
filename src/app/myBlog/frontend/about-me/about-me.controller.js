@@ -1,4 +1,4 @@
-function AboutMeController() {
+function AboutMeController(GithubService) {
 	var ctrl = this;
 	ctrl.$onInit = function (){
 		ctrl.timelineData = ctrl.allTimeline

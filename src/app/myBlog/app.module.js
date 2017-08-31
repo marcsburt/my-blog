@@ -1,3 +1,4 @@
+
 angular
   .module('myBlog', [
     'ui.router',
@@ -10,7 +11,8 @@ angular
     'ngSanitize',
     '720kb.socialshare',
     'smart-table',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angularGrid'
   ])
 
 .config(function($firebaseRefProvider) {

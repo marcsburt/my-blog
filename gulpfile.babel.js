@@ -43,7 +43,9 @@ const paths = {
     'angular-socialshare/dist/angular-socialshare.js',
     'angular-smart-table/dist/smart-table.js',
     'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
-    'lodash/lodash.js'
+    'lodash/lodash.js',
+    'angulargrid/angulargrid.js'
+
   ],
   static: [
     `${root}/index.html`,
